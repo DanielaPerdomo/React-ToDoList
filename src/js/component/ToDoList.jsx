@@ -8,12 +8,14 @@ const ToDoList = () => {
   }
   //Funcion Anade tareas
   const handlerTask =(event) => {
-    if (event.key === "Enter" && newTask != ""){
-      setTaskList([...taskList, newTask])
-      setNewTask("")
-    }
-    else {
-      alert('No hay tarea escrita')
+    if (event.key === "Enter"){
+      if ( newTask.trim() != "") {
+        setTaskList([...taskList, newTask])
+        setNewTask("")
+      }
+      else {
+        alert('No hay tarea escrita')
+      }
     }
   }
   const deleteTask =(indexTask)=>{
